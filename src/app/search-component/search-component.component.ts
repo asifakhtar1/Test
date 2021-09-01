@@ -22,7 +22,6 @@ export class SearchComponentComponent implements OnInit, OnDestroy {
       this.service.getDeezerArtistData$(name),
       this.service.getiTunesArtistData$(name)
     ])
-    .pipe()
     .subscribe(
       ([DeezerArtist, iTunesArtist]) => { 
         this.DeezerArtistData = DeezerArtist;
