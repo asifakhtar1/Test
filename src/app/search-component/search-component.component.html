@@ -2,7 +2,7 @@
     <div>
         <label>Enter Artist Name :</label>
         <input type="text" value="" #artistName />
-        <button type="button" (click)="onSearch(artistName.value)">Search</button>        
+        <button type="button" (click)="onSearch(artistName.value)">Search</button>
     </div>
 </form>
 <br /><br />
@@ -12,45 +12,42 @@
     <table>
         <thead>
             <tr>
-                <th>artist Id</th>         
+                <th>artist Id</th>
                 <th>Artist Name</th>
                 <th>Artist link</th>
                 <th>Artist type</th>
-                
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let data of iTunesArtistData">
-                <td>{{data.artist.id}}</td>    
+                <td>{{data.artist.id}}</td>
                 <td>{{data.artist.name}}</td>
                 <td>{{data.artist.link}}</td>
-                <td>{{data.artist.type}}</td>			
+                <td>{{data.artist.type}}</td>
             </tr>
         </tbody>
     </table>
 </div>
 
 <br /><br />
-<div  *ngIf="iTunesArtistData">
+<div *ngIf="iTunesArtistData">
     <span>itunes Data:</span>
     <table>
         <thead>
             <tr>
-                <th>Artist Id</th>         
+                <th>Artist Id</th>
                 <th>Artist Name</th>
                 <th>Artist ViewUrl</th>
                 <th>Collection Censored Name</th>
-                
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let data of iTunesArtistData">
-                <td>{{data.artistId}}</td>    
+                <td>{{data.artistId}}</td>
                 <td>{{data.artistName}}</td>
                 <td>{{data.artistViewUrl}}</td>
-                <td>{{data.collectionCensoredName}}</td>			
+                <td>{{data.collectionCensoredName}}</td>
             </tr>
         </tbody>
     </table>
 </div>
-
