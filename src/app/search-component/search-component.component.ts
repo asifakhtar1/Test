@@ -10,8 +10,8 @@ import { DataServiceService } from '../data-service.service'
 })
 
 export class SearchComponentComponent implements OnInit, OnDestroy {
-  iTunesArtistData: IiTunes[] | undefined;
-  DeezerArtistData: IDeezer[] | undefined;;
+  iTunesArtistData: IiTunes[] = [];
+  DeezerArtistData: IDeezer[] = [];
   private _subs: Subscription | undefined;
 
   constructor(private service: DataServiceService) { }

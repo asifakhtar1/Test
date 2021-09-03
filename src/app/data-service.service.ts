@@ -11,7 +11,7 @@ import { IDeezer, IiTunes } from 'src/Interfaces';
 export class DataServiceService {
   constructor(private http: HttpClient) { }
 
-  public getDeezerArtistData$(name: string): Observable<IDeezer[]> {
+  public getDeezerArtistData$(name: string): Observable<IDeezer[] | []> {
     const requestedParams = {
       q: name
     };
@@ -40,7 +40,7 @@ export class DataServiceService {
       );
   }
 
-  public getiTunesArtistData$(name: string): Observable<IiTunes[]> {
+  public getiTunesArtistData$(name: string): Observable<IiTunes[] | []> {
     const requestedParams = {
       term: name
     };

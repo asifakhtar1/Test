@@ -7,7 +7,7 @@
 </form>
 <br /><br />
 
-<div *ngIf="DeezerArtistData">
+<div *ngIf="DeezerArtistData.length > 0; else elseDeezerBlock">
     <span>deezer Data:</span>
     <table>
         <thead>
@@ -28,9 +28,10 @@
         </tbody>
     </table>
 </div>
+<ng-template #elseDeezerBlock>No Deezer data.</ng-template>
 
 <br /><br />
-<div *ngIf="iTunesArtistData">
+<div *ngIf="iTunesArtistData.length > 0; else elseiTunesBlock"> 
     <span>itunes Data:</span>
     <table>
         <thead>
@@ -39,15 +40,21 @@
                 <th>Artist Name</th>
                 <th>Artist ViewUrl</th>
                 <th>Collection Censored Name</th>
+                <th>My Image</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let data of iTunesArtistData">
                 <td>{{data.artistId}}</td>
                 <td>{{data.artistName}}</td>
-                <td>{{data.artistViewUrl}}</td>
-                <td>{{data.collectionCensoredName}}</td>
+                <td>
+                    
+                    <a target="_blank" href="{{data.artistViewUrl}}">artist View Url</a>
+                </td>
+                <td>{{data.collectionCensoredName}}</td> 
+                <td><img src="https://media-exp1.licdn.com/dms/image/C4D03AQEjsjSFf5KpAA/profile-displayphoto-shrink_400_400/0/1517492352350?e=1635984000&v=beta&t=O5_cJzk8AbW2ek7C38jV36_J-PLaVA2djbcot0B_Ctw"[attr.width]="'100px'" [attr.height]="'100px'"  /></td> 
             </tr>
         </tbody>
     </table>
 </div>
+<ng-template #elseiTunesBlock>No iTunes data.</ng-template>
