@@ -66,12 +66,14 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
+          "configurations": {            
             "production": {
-              "browserTarget": "CorsacTest:build:production"
+              "browserTarget": "CorsacTest:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "browserTarget": "CorsacTest:build:development"
+              "browserTarget": "CorsacTest:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { combineLatest, Subscription } from 'rxjs';
+import { IDeezer, IiTunes } from 'src/Interfaces';
 import { DataServiceService } from '../data-service.service'
 
 @Component({
@@ -9,8 +10,8 @@ import { DataServiceService } from '../data-service.service'
 })
 
 export class SearchComponentComponent implements OnInit, OnDestroy {
-  iTunesArtistData: any;
-  DeezerArtistData: any;
+  iTunesArtistData: IiTunes[] | undefined;
+  DeezerArtistData: IDeezer[] | undefined;;
   private _subs: Subscription | undefined;
 
   constructor(private service: DataServiceService) { }
